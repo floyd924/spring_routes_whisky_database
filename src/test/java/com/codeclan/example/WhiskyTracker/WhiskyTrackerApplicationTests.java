@@ -5,6 +5,7 @@ import com.codeclan.example.WhiskyTracker.models.Distillery;
 import com.codeclan.example.WhiskyTracker.models.Whisky;
 import com.codeclan.example.WhiskyTracker.repositories.DistilleryRepository.DistilleryRepository;
 import com.codeclan.example.WhiskyTracker.repositories.WhiskyRepository.WhiskyRepository;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,9 +53,14 @@ public class WhiskyTrackerApplicationTests {
 		List<Distillery> result = distilleryRepository.getDistilleryByRegion("Highland");
 	}
 
-	@Test
+	@Ignore
 	public void canGetDistilleryByWhiskyAge12(){
 		List<Distillery> result = distilleryRepository.getDistilleryByWhiskyAge(12);
+	}
+
+	@Test
+	public void canGetDistilleriesWithWhiskyAge15(){
+		List<Distillery> result = distilleryRepository.getDistilleriesForWhiskyAge(15);
 	}
 
 

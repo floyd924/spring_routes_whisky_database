@@ -18,6 +18,7 @@ public class DistilleryController {
     DistilleryRepository distilleryRepository;
 
     @GetMapping(value="/{region}")
+    // you should have listed the path as /region/{region} so that the use has as much information about what is being said as possible!
     public List<Distillery> findAllDistilleryByRegion(@PathVariable String region){
         return distilleryRepository.getDistilleryByRegion(region);
     }
